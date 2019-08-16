@@ -38,32 +38,6 @@ namespace ACM
         }
 
         /// <summary>
-        /// Retrieve one customer.
-        /// </summary>
-        /// <returns></returns>
-        public Customer Retrieve(int customerId)
-        {
-            return new Customer();
-        }
-
-        /// <summary>
-        /// Retrieve all customers.
-        /// </summary>
-        /// <returns></returns>
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
-
-        /// <summary>
-        /// Saves the curent customer.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            return true;
-        }
-        /// <summary>
         /// Validates the customer data.
         /// </summary>
         /// <returns></returns>
