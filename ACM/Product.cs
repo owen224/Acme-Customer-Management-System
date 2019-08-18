@@ -17,24 +17,6 @@
         public decimal? CurrentPrice { get; set; }
 
         /// <summary>
-        /// Retrieve one item.
-        /// </summary>
-        /// <returns></returns>
-        public Product Retrieve(int productId)
-        {
-            return new Product();
-        }
-
-        /// <summary>
-        /// Saves the curent customer.
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            return true;
-        }
-
-        /// <summary>
         /// Validates the product data.
         /// </summary>
         /// <returns></returns>
