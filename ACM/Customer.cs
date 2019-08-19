@@ -39,6 +39,8 @@ namespace ACM
             }
         }
 
+        public override string ToString() => FullName;
+
         /// <summary>
         /// Validates the customer data.
         /// </summary>

@@ -1,6 +1,6 @@
 ﻿namespace ACM
 {
-    public class Product
+    public class Product : EnitityBase
     {
         public Product()
         {
@@ -16,11 +16,13 @@
         public string ProductDescription { get; set; }
         public decimal? CurrentPrice { get; set; }
 
+        public override string ToString() => ProductName;
+
         /// <summary>
         /// Validates the product data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
