@@ -2,17 +2,19 @@
 
 namespace ACM
 {
-    public class Product : EnitityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
 
         }
-
         public Product(int productId)
         {
             ProductId = productId;
         }
+
+        public decimal? CurrentPrice { get; set; }
+        public string ProductDescription { get; set; }
         public int ProductId { get; private set; }
 
         private string _productName;
@@ -28,9 +30,8 @@ namespace ACM
             }
         }
 
-
-        public string ProductDescription { get; set; }
-        public decimal? CurrentPrice { get; set; }
+        public string Log() =>
+        $"{ProductId}: {ProductName} Detail: {ProductDescription} Status: {EntityState.ToString()}";
 
         public override string ToString() => ProductName;
 

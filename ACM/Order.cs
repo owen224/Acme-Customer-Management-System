@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 
 namespace ACM
 {
-    public class Order
+    public class Order : EntityBase, ILoggable
     {
         public Order() : this(0)
         {
 
         }
-
         public Order(int orderId)
         {
             OrderId = orderId;
@@ -20,34 +20,19 @@ namespace ACM
         public DateTimeOffset? OrderDate { get; set; }
         public int OrderId { get; private set; }
         public List<OrderItem> OrderItems { get; set; }
-        public int ShippingAddresId { get; set; }
+        public int ShippingAddressId { get; set; }
 
-        public override string ToString() => $"{OrderDate.Value.Date} ({OrderId})";
+        public string Log() =>
+            $"{OrderId}: Date: {this.OrderDate.Value.Date} Status: {this.EntityState.ToString()}";
 
-
-        /// <summary>
-        /// Retrieve one order.
-        /// </summary>
-        /// <returns></returns>
-        public Order Retrieve(int orderId)
-        {
-            return new Order();
-        }
+        public override string ToString() =>
+              $"{OrderDate.Value.Date} ({OrderId})";
 
         /// <summary>
-        /// Saves the curent order.
+        /// Validates the order data.
         /// </summary>
         /// <returns></returns>
-        public bool Save()
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// Validates the Order data.
-        /// </summary>
-        /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 

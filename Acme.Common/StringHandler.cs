@@ -27,7 +27,7 @@ namespace Acme.Common
                 }
             }
             result = result.Trim();
-            return result;
-        }
+            return result;        }
+
     }
 }

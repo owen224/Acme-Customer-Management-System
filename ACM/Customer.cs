@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Acme.Common;
+using System.Collections.Generic;
 
 namespace ACM
 {
-    public class Customer
+    public class Customer : EnitityBase, ILoggable
     {
         public Customer(): this(0)
         {
@@ -39,13 +40,16 @@ namespace ACM
             }
         }
 
+        public string Log() =>
+          $"{CustomerId}: {FullName} Email: {EmailAddress} Status: {EntityState.ToString()}";
+
         public override string ToString() => FullName;
 
         /// <summary>
         /// Validates the customer data.
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -56,3 +60,4 @@ namespace ACM
         }
     }
 }
+
