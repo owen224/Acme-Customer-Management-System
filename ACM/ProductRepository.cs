@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ACM
+﻿namespace ACM
 {
     public class ProductRepository
     {
