@@ -1,11 +1,11 @@
 ﻿using System;
+using Xunit;
 
 namespace ACM.Test
 {
-    [TestClass()]
     public class OrderRepositoryTests
     {
-        [TestMethod()]
+        [Fact]
         public void RetrieveOrderDisplayTest()
         {
             //-- Arrange
@@ -20,7 +20,7 @@ namespace ACM.Test
             var actual = orderRepository.Retrieve(10);
 
             //-- Assert
-            Assert.AreEqual(expected.OrderDate, actual.OrderDate);
+            Assert.Equal(expected.OrderDate, actual.OrderDate);
         }
     }
 }

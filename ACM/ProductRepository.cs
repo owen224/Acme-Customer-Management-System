@@ -19,8 +19,8 @@ namespace ACM
             // a populated product
             if (productId == 2)
             {
-                product.ProductName = "Sunflowers";
-                product.ProductDescription = "Assorted Size Set of 4 Bright Yellow Mini Sunflowers";
+                product.ProductName = "Die another Day";
+                product.ProductDescription = "Licence to kill";
                 product.CurrentPrice = 15.96M;
             }
             return product;
@@ -36,6 +36,5 @@ namespace ACM
 
             return true;
         }
-
     }
 }

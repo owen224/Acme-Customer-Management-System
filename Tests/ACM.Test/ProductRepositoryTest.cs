@@ -1,12 +1,10 @@
-﻿using ACM.BL;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Xunit;
 
 namespace ACM.Test
 {
-    [TestClass()]
     public class ProductRepositoryTest
     {
-        [TestMethod()]
+        [Fact]
         public void RetrieveTest()
         {
             //-- Arrange
@@ -14,17 +12,17 @@ namespace ACM.Test
             var expected = new Product(2)
             {
                 CurrentPrice = 15.96M,
-                ProductDescription = "Assorted Size Set of 4 Bright Yellow Mini Sunflowers",
-                ProductName = "Sunflowers"
+                ProductDescription = "Licence to kill",
+                ProductName = "Die another Day"
             };
 
             //-- Act
             var actual = productRepository.Retrieve(2);
 
             //-- Assert
-            Assert.AreEqual(expected.CurrentPrice, actual.CurrentPrice);
-            Assert.AreEqual(expected.ProductDescription, actual.ProductDescription);
-            Assert.AreEqual(expected.ProductName, actual.ProductName);
+            Assert.Equal(expected.CurrentPrice, actual.CurrentPrice);
+            Assert.Equal(expected.ProductDescription, actual.ProductDescription);
+            Assert.Equal(expected.ProductName, actual.ProductName);
         }
     }
 }

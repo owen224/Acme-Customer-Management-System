@@ -1,6 +1,4 @@
-﻿using ACM;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 
 namespace ACM
 {
@@ -23,7 +21,7 @@ namespace ACM
             {
                 // Use current year in hard-coded data
                 order.OrderDate = new DateTimeOffset(DateTime.Now.Year, 4, 14, 10, 00, 00,
-                                                     new TimeSpan(7, 0, 0));
+                                  new TimeSpan(7, 0, 0));
             }
 
             return order;
